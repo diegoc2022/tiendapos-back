@@ -45,6 +45,10 @@ export class VentaProductosService {
           where:{
             factura:id
           }
-        })
-     }
+        })     
+    }
+
+    async funct_elimina_ventas_temporal(){
+        return await this.repository.delete({}); 
+    }
 }

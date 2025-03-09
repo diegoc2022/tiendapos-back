@@ -33,5 +33,5 @@ export class ProductosController {
     @Patch('productos/:cod')
     async funct_edita_precios_c(@Param('cod') cod:string, @Body() precio:ProductosDto){          
         return await this.productos.funct_edita_precios_s(cod,precio);
-    } 
+    }    
 }

@@ -3,10 +3,14 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { ProductosEntity } from './entity/productos.entity';
 import { Repository } from 'typeorm';
 import { ProductosDto } from './dto/productos.dto';
+import { format } from 'date-fns';
 
 @Injectable()
 export class ProductosService {
   total_lotes_insertados:number =0;
+  result:any;
+  fecha_actual = new Date();
+
   constructor(
         @InjectRepository(ProductosEntity)
         private repository:Repository<ProductosEntity>
@@ -41,4 +45,5 @@ export class ProductosService {
   async funct_edita_precios_s(id:string,precio:ProductosDto){                        
     return this.repository.update({codProd:id},precio);
   }
+  
 }

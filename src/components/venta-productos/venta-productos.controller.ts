@@ -42,5 +42,10 @@ export class VentaProductosController {
     funt_retorna_ventas_facturas(@Param('id') id:any){
         return this.services.funt_retorna_ventas_facturas(id)
     }
+
+    @Delete('ventasTemp/')
+    funct_elimina_ventas_temporal_c(){
+      return  this.services.funct_elimina_ventas_temporal()
+    }
     
 }
